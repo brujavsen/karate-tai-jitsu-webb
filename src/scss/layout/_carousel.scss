@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.slider {
+    height: 100%;
+    position: relative;
+    .arrowStyle {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-size: 45px;
+        color: #FFF;
+        z-index: 1;
+        cursor: pointer;
+        background-color: v.$primary-c;
+        border-radius: 50%;
+        
+    }
+    .left {left: 15px;}
+    .right {right: 15px;}
+    .dotsCnt {
+        display: flex;
+        justify-content: center;
+        .dotStyle {
+            margin: 0 3px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}

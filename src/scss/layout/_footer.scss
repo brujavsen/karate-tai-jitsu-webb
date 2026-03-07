@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.footer {
+    height: 50px;
+    border-top: 2px solid v.$primary-c;
+    background-color: v.$black;
+    p {
+        color: v.$gray;
+    }
+}

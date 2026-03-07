@@ -1,0 +1,151 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero_galery {
+    background-image: url('../../../public/galery/image-9.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 150px 0;
+
+    .hero_title {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.958);
+        padding: 20px;
+        border-radius: 5px;
+        h2 {
+            font-family: v.$thd-font;
+            color: v.$white;
+            font-size: 4.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            padding: 0 5rem;
+            @include m.tablet {
+                font-size: 5rem;
+            }
+        }
+        p {
+            font-size: 2.8rem;
+            color: v.$primary-c;
+            font-weight: bold;
+        }
+    }
+}
+.first-aid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$primary-c;
+    h3 {
+        color: v.$white;
+        font-family: v.$thd-font;
+        font-size: 1.6rem;
+        @include m.tablet {
+            font-size: 2rem;
+        }
+        text-align: center;
+        padding: 1rem;
+        background-color: v.$black;
+        width: 100%;
+    }
+    .first-aid__grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include m.tablet {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        padding: .5rem;
+        @include m.tablet {
+            flex: 25%;
+        }
+        width: 100%;
+        gap: 1rem;
+        img {
+            border-radius: .2rem;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+}
+.images-title {
+    color: v.$white;
+    font-family: v.$thd-font;
+    font-size: 1.6rem;
+    @include m.tablet {
+        font-size: 2rem;
+    }
+    text-align: center;
+    padding: 1rem;
+    background-color: v.$black;
+    width: 100%;
+}
+.row {
+    display: flex;
+    .column{
+        flex: 100%;
+        padding: .5rem;
+        background-color: v.$black;
+        @include m.tablet {
+            flex: 25%;
+        }
+        .image_item {
+            overflow: hidden;
+            cursor: pointer;
+            img {
+                height: 100%;
+                width: 100%;
+                transition: .2s linear;
+                margin: .5rem 0;
+                border-radius: .2rem;
+                width: 100%;
+            }
+        }
+    }
+}
+.popup-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+
+    .close-icon {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 40px;
+        @include m.tablet {
+            font-size: 45px;
+        }
+        color: v.$white;
+        cursor: pointer;
+        z-index: 100;
+        opacity: .9;
+        border-radius: 50%;
+    }
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 98vw;
+        height: 98vh;
+        object-fit: contain;
+        @include m.tablet {
+            width: 90vw;
+            height: 96vh;
+        }
+    }
+}
+.hidden {
+    display: none;
+}

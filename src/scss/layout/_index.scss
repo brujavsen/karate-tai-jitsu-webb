@@ -1,0 +1,377 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero_index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: v.$primary-c;
+    .logo {
+        margin: 2rem 0;
+        source {
+            width: 50%;
+            height: 50%;
+        }
+        img {
+            height: 50%;
+            width: 50%;
+        }
+        @include m.tablet {
+            source {
+                width: 60%;
+                height: 60%;
+            }
+            img {
+                width: 60%;
+                height: 60%;
+            }
+        }
+    }
+}
+.text {
+    .title_hero {
+        text-align: center;
+        font-family: v.$thd-font;
+        font-size: 2rem;
+        color: v.$white;
+        text-shadow: 1.5px 1.5px 2px v.$black;
+        margin-bottom: 2rem;
+    }
+    .first_class {
+        font-size: 1.8rem;
+        padding: 2rem 0;
+        text-align: center;
+        font-family: v.$thd-font;
+        background-image: repeating-linear-gradient(45deg,
+            #ffd900 0%,
+            #ffffff 50%
+        );
+        background-size: 200vw 200vw;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: loop 7s infinite linear;
+    
+        @include m.tablet {
+            font-size: 3rem;
+        }
+    }
+}
+.section_services {
+    height: 700px;
+    .services-index-title {
+        margin: 9rem auto 5rem auto;
+        padding: 2rem;
+        text-align: center;
+        font-size: 2.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        @include m.tablet {
+            font-size: 3.5rem;
+        }
+    
+        span {
+            color: v.$primary-c;
+        }
+    }
+    .services-index-btn {
+        margin: 5rem auto 15rem auto;
+        text-align: center;
+        .service-btn {
+            background-color: v.$primary-c;
+            color: v.$white;
+            box-shadow: 7px 7px 10px v.$primary-c;
+            padding: 1.5rem 5rem;
+            font-size: 2.5rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: .3s ease-in-out;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+            &:hover {
+                box-shadow: 10px 10px 10px v.$primary-c;
+                background-color: v.$black;
+                color: v.$white;
+            }
+        }
+    }
+    .service-index {
+        display: flex;
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+        .slide:nth-child(4) {
+            display: none;
+            @include m.tablet {
+                display: flex;
+            }
+        }
+        .slide {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            img {
+                width: 0px;
+                height: inherit;
+                flex-grow: 1;
+                object-fit: cover;
+                opacity: .8;
+                transition: .5s ease-in-out;
+                filter: grayscale(100);
+                &:hover {
+                    width: 250px;
+                    @include m.tablet {
+                        width: 500px;
+                    }
+                    opacity: 1;
+                    filter: contrast(120%);
+                }
+                z-index: 1;
+            }
+            small {
+                position: absolute;
+                font-size: 2.5rem;
+                @include m.tablet {
+                    font-size: 3.5rem;
+                }
+                text-align: center;
+                font-weight: bold;
+                left: 0;
+                right: 0;
+                bottom: 0px;
+                backdrop-filter: blur(2px);
+                color: v.$white;
+                background-color: rgba(0, 0, 0, 0.866);
+                opacity: 0;
+                padding: .5rem;
+                overflow: hidden;
+                z-index: 0;
+                transition: 1s ease-in-out;
+            }
+            & img:hover~small {
+                opacity: 1;
+                z-index: 2;
+            }
+            svg {
+                position: absolute;
+                font-size: 2.5rem;
+                opacity: .7;
+                color: v.$white;
+                background-color: v.$black;
+                border-radius: 20%;
+                @include m.tablet {
+                    display: none;
+                }
+                z-index: 3;
+            }
+        }
+    }
+}
+
+.benefit_section {
+    margin: 8rem auto 0 auto;
+    h2 {
+        margin: 5rem 0;
+        padding: 2rem;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        @include m.tablet {
+            font-size: 4rem;
+        }
+    }
+    p{
+        text-align: center;
+        margin: 5rem auto 10rem auto;
+        font-size: 2.3rem;
+        @include m.tablet {
+            font-size: 2.6rem;
+        }
+        span {
+            color: v.$primary-c;
+            font-weight: bold;
+        }
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+        @include m.desktop {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include m.desktopXL {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .card {
+        margin: 3rem 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 320px;
+        height: 300px;
+        background-color: v.$primary-c;
+        &:nth-child(odd) {
+            background-color: v.$black;
+        }
+        border-radius: 5px;
+        box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+        transition: 0.5s;
+        &:hover {
+            height: 300px;
+        }
+        p {
+            font-size: 2rem;
+            @include m.tablet {
+                font-size: 2.5rem;
+            }
+        }
+        svg {
+            color: v.$white;
+            font-size: 4rem;
+            transform: rotate(310deg);
+            position: absolute;
+            bottom: 13px;
+            right: 13px;
+            transition: 1s ease-in-out;
+        }
+        .card_title {
+            position: absolute;
+            top: 20px;
+            width: 300px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: v.$white;
+            box-shadow: 8px 8px 10px v.$black;
+            transition: 0.5s;
+        }
+        &:nth-child(odd) .card_title{
+            box-shadow: 8px 8px 10px v.$primary-c;
+        }
+        &:hover .card_title {
+            top: -100px;
+            scale: 0.7;
+        }
+        .card_cnt {
+            position: absolute;
+            top: 250px;
+            width: 100%;
+            height: 10px;
+            padding: 0 20px;
+            text-align: center;
+            display: none;
+            transition: 0.5s;
+            color: v.$white;
+        }
+        &:hover .card_cnt {
+            top: 70px;
+            display: block;
+        }
+    }
+    .final_info {
+        width: 100%;
+        margin: 10rem auto 0 auto;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: v.$black;
+        p {
+            font-size: 2.7rem;
+            margin: 5rem 0;
+            color: v.$white;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+        }
+        a {
+            background-color: v.$white;
+            color: v.$primary-c;
+            padding: .9rem 2rem;
+            font-size: 3rem;
+            text-align: center;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: .3s ease-in-out;
+            width: fit-content;
+            margin: 0 auto;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+            &:hover {
+                transform: translateY(-5px);
+                background-color: v.$primary-c;
+                color: v.$white;
+            }
+        }
+    }
+    .final_galery {
+        background-image: url('../../../public/galery/image-9.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        padding: 150px 0;
+
+        .info_galery {
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p {
+                color: v.$white;
+                font-size: 3.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                width: 100%;
+                text-align: center;
+                margin: 5rem 0;
+                @include m.tablet {
+                    font-size: 4rem;
+                }
+            }
+            a {
+                background-color: v.$white;
+                color: v.$primary-c;
+                padding: .9rem 2rem;
+                font-size: 2rem;
+                text-align: center;
+                border-radius: 2px;
+                text-transform: uppercase;
+                transition: .3s ease-in-out;
+                width: fit-content;
+                margin: 0 auto;
+                @include m.tablet {
+                    font-size: 3rem;
+                }
+                &:hover {
+                    transform: translateY(-5px);
+                    background-color: v.$primary-c;
+                    color: v.$white;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes loop {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 200vw;
+    }
+}
