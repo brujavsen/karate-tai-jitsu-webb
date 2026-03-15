@@ -1,6 +1,6 @@
-const Services = () => {
+import { useMemo } from "react";
 
-  let services = [
+const servicesData = [
     { url: "/service-8.jpeg", title: "Clases de Karate", desc: 'Sumérgete en el mundo del Karate Tai Jitsu. Nuestras clases te ofrecen la oportunidad de aprender las técnicas tradicionales, mejorar tu condición física y cultivar una mente fuerte.' },
     { url: "/service-1.jpeg", title: "Defensa Personal", desc: 'La seguridad personal es una prioridad. Aprende técnicas efectivas y gana confianza en ti mismo. Tu seguridad es nuestra misión.' },
     { url: "/service-5.jpeg", title: "Uso de armas tradicionales (kobudo)", desc: 'Descubre el arte del kobudo y domina el uso de armas tradicionales japonesas.' },
@@ -13,23 +13,28 @@ const Services = () => {
   ];
   
 
+const Services = () => {
+
+  const services = useMemo(() => servicesData, []);
+  
+
   return (
     <>
-      <div className='hero_services'>
+      <section className='hero_services' aria-labelledby="services-title">
         <div className='hero_title'>
-          <h2>Propuesta Integral</h2>
+          <h2 id="services-title">Propuesta integral</h2>
           <p>¿Listo para unirte?</p>
         </div>
-      </div>
-      <section className='main_services'>
-        <article className='main_title'>
+      </section>
+      <section className='main_services' aria-label="Propuesta integral de Karate Tai Jitsu">
+        <header className='main_title'>
           <h2>Explora nuestra Propuesta Integral de Karate Tai Jitsu</h2>
           <p>Con profesores capacitados, con más de 15 años de experiencia</p>
-        </article>
-        <article className='service'>
+        </header>
+        <section className='service' aria-label="Servicios ofrecidos">
           {
             services?.map((service, index) => (
-              <section 
+              <article 
                 key={index} 
                 className='card_service'
               >
@@ -42,10 +47,10 @@ const Services = () => {
                     <img loading='lazy' height={300} width={300} src={service.url} alt={service.title}/>
                   </div>
                 </div>
-              </section>
+              </article>
             ))
           }
-        </article>
+        </section>
       </section>
     </>
   )

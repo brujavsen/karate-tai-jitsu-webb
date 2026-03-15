@@ -1,11 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BiXCircle } from "react-icons/bi";
 
-const Galery = () => {
-  const [imageSelected, setImageSelected] = useState(null);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const [images, setImages] = useState([
+const galleryImages = [
     "/galery/image-1.jpeg",
     "/galery/image-2.jpeg",
     "/galery/image-3.jpeg",
@@ -139,35 +135,97 @@ const Galery = () => {
     "/galery/image-131.jpg",
     "/galery/image-132.jpg",
     "/galery/image-133.jpg",
-  ]);
+  "/galery/image-133.jpg",
+];
 
-  const [imagesFirstAid, setImagesFirstAid] = useState([
+const firstAidImages = [
     "/first-aid/image-04.jpg",
     "/first-aid/image-06.jpg",
     "/first-aid/image-02.jpg",
     "/first-aid/image-03.jpg",
     "/first-aid/image-05.jpg",
-  ]);
+];
+
+const Galery = () => {
+  const [imageSelected, setImageSelected] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [zoom, setZoom] = useState(1);
+  const [isPanning, setIsPanning] = useState(false);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [startPan, setStartPan] = useState({ x: 0, y: 0 });
 
   const [loadedImages, setLoadedImages] = useState([]);
 
-  const firstTenImages = images.slice(0, 46);
-  const secondTenImages = images.slice(46, 89);
-  const thirdTenImages = images.slice(89, 135);
+  const images = useMemo(() => galleryImages, []);
+  const imagesFirstAid = useMemo(() => firstAidImages, []);
 
-  // Función para manejar la carga de imágenes
+  const firstColumnImages = useMemo(() => images.slice(0, 46), [images]);
+  const secondColumnImages = useMemo(() => images.slice(46, 89), [images]);
+  const thirdColumnImages = useMemo(() => images.slice(89, 135), [images]);
+
   const handleImageLoad = (image) => {
-    setLoadedImages((prevImages) => [...prevImages, image]);
+    setLoadedImages((prevImages) =>
+      prevImages.includes(image) ? prevImages : [...prevImages, image]
+    );
   };
 
   const openImage = (image) => {
     setImageSelected(image);
     setIsModalVisible(true);
+    setZoom(1);
+    setOffset({ x: 0, y: 0 });
   };
 
   const closeImage = () => {
     setImageSelected(null);
     setIsModalVisible(false);
+    setZoom(1);
+    setOffset({ x: 0, y: 0 });
+  };
+
+  const handleOverlayClick = (event) => {
+    if (event.target.classList.contains("popup-img")) {
+      closeImage();
+    }
+  };
+
+  const handleZoomIn = () => {
+    setZoom((prev) => Math.min(prev + 0.5, 4));
+  };
+
+  const handleZoomOut = () => {
+    setZoom((prev) => Math.max(prev - 0.5, 1));
+    setOffset({ x: 0, y: 0 });
+  };
+
+  const handleWheel = (event) => {
+    event.preventDefault();
+    const delta = event.deltaY < 0 ? 0.25 : -0.25;
+    setZoom((prev) => {
+      const next = Math.min(Math.max(prev + delta, 1), 4);
+      if (next === 1) {
+        setOffset({ x: 0, y: 0 });
+      }
+      return next;
+    });
+  };
+
+  const handleMouseDown = (event) => {
+    if (zoom === 1) return;
+    setIsPanning(true);
+    setStartPan({ x: event.clientX - offset.x, y: event.clientY - offset.y });
+  };
+
+  const handleMouseMove = (event) => {
+    if (!isPanning) return;
+    setOffset({
+      x: event.clientX - startPan.x,
+      y: event.clientY - startPan.y,
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsPanning(false);
   };
 
   useEffect(() => {
@@ -190,17 +248,19 @@ const Galery = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries, observer) => {
+      (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const image = entry.target;
-            image.src = image.dataset.src; // Cargar la imagen
-            observer.unobserve(image); // Dejar de observar una vez cargada
+            if (image.dataset.src) {
+              image.src = image.dataset.src;
+            }
+            obs.unobserve(image);
           }
         });
       },
       {
-        rootMargin: "100px", // Cargar un poco antes de que entre en el viewport
+        rootMargin: "100px",
       }
     );
 
@@ -214,14 +274,14 @@ const Galery = () => {
 
   return (
     <>
-      <div className="hero_galery">
+      <section className="hero_galery" aria-labelledby="galery-title">
         <div className="hero_title">
-          <h2>Galeria</h2>
+          <h2 id="galery-title">Galería</h2>
           <p>Conoce a través de fotos</p>
         </div>
-      </div>
-      <div className="first-aid">
-        <h3>Primeros Auxilios</h3>
+      </section>
+      <section className="first-aid" aria-labelledby="first-aid-title">
+        <h3 id="first-aid-title">Primeros auxilios</h3>
         <div className="first-aid__grid">
           {imagesFirstAid.map((image, index) => (
               <div
@@ -239,11 +299,11 @@ const Galery = () => {
               </div>
             ))}
         </div>
-      </div>
+      </section>
       <h3 className="images-title">Actividades</h3>
-      <section className="row">
+      <section className="row" aria-label="Galería de actividades">
         <div className="column">
-          {firstTenImages.map((image, index) => (
+          {firstColumnImages.map((image, index) => (
             <div
               key={index}
               className="image_item"
@@ -260,7 +320,7 @@ const Galery = () => {
           ))}
         </div>
         <div className="column">
-          {secondTenImages.map((image, index) => (
+          {secondColumnImages.map((image, index) => (
             <div
               key={index}
               className="image_item"
@@ -277,7 +337,7 @@ const Galery = () => {
           ))}
         </div>
         <div className="column">
-          {thirdTenImages.map((image, index) => (
+          {thirdColumnImages.map((image, index) => (
             <div
               key={index}
               className="image_item"
@@ -294,15 +354,47 @@ const Galery = () => {
           ))}
         </div>
       </section>
-      <div className={`popup-img ${isModalVisible ? "" : "hidden"}`}>
-        <BiXCircle className="close-icon" onClick={closeImage} />
+      <div
+        className={`popup-img ${isModalVisible ? "" : "hidden"}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Imagen ampliada"
+        onClick={handleOverlayClick}
+        onWheel={handleWheel}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <button
+          type="button"
+          className="close-icon"
+          onClick={closeImage}
+          aria-label="Cerrar imagen"
+        >
+          <BiXCircle />
+        </button>
         {imageSelected && (
-          <img
-            loading="lazy"
-            src={imageSelected}
-            alt={`img`}
-            onClick={closeImage}
-          />
+          <div className="popup-img__content">
+            <div className="popup-img__controls">
+              <button type="button" onClick={handleZoomOut} disabled={zoom === 1}>
+                -
+              </button>
+              <span>{Math.round(zoom * 100)}%</span>
+              <button type="button" onClick={handleZoomIn} disabled={zoom === 4}>
+                +
+              </button>
+            </div>
+            <img
+              loading="lazy"
+              src={imageSelected}
+              alt="Imagen ampliada"
+              style={{
+                transform: `translate(-50%, -50%) scale(${zoom}) translate(${offset.x / zoom}px, ${offset.y / zoom}px)`,
+              }}
+              onMouseDown={handleMouseDown}
+              draggable={false}
+            />
+          </div>
         )}
       </div>
     </>

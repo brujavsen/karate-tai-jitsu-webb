@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom'
 import { TbPlaneTilt, TbHandClick } from "react-icons/tb";
 import { MdOutlinePhotoCamera } from "react-icons/md";
 
 const Index = () => {
-  let slides = [
+  const slides = useMemo(() => ([
       {url: "/service-2.jpeg", urlWbp: '/service-2.webp', title: "Torneos"},
       {url: "/service-3.jpeg", urlWbp: '/service-3.webp', title: "Paseos"},
       {url: "/service-4.jpeg", urlWbp: '/service-4.webp', title: "Actividades Recreativas"},
       {url: "/service-5.jpeg", urlWbp: '/service-5.webp', title: "Uso de Armas Japonesas"},
       {url: "/service-6.jpeg", urlWbp: '/service-6.webp', title: "Graduaciones"},
-  ];
+  ]), []);
 
-  let cardInfo = [
+  const cardInfo = useMemo(() => ([
     {qst: '¿Listo para impulsar tu autoestima y seguridad?', rsp: 'Nuestros expertos te ayudarán a desarrollar una mayor autoestima y seguridad en ti mismo.'},
     {qst: '¿Buscas estimular tu autocontrol y bienestar emocional?', rsp: 'Aprenderás técnicas para controlar tus emociones y reacciones, promoviendo un autocontrol saludable.'},
     {qst: '¿Quieres desarrollar valores positivos en tu vida?', rsp: 'Fomentamos la incorporación de valores positivos en tu vida para un crecimiento personal duradero.'},
@@ -21,11 +21,11 @@ const Index = () => {
     {qst: '¿Quieres mejorar tu concentración?', rsp: 'Desarrollamos ejercicios y técnicas para mejorar la concentración y el enfoque.'},
     {qst: '¿Buscas incrementar tu coordinación motriz?', rsp: 'Nuestros programas incluyen ejercicios que mejoran la coordinación motriz.'},
     {qst: '¿Listo para tonificar tus músculos?', rsp: 'Ofrecemos clases de acondicionamiento físico que te ayudarán a tonificar tus músculos y mejorar tu resistencia.'},
-  ];
+  ]), []);
 
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo(0, 0);
-  };
+  }, []);
 
   return (
     <>

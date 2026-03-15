@@ -8,25 +8,16 @@
     align-items: center;
     text-align: center;
     background-color: v.$primary-c;
+    padding: 6rem 1.6rem 4rem;
     .logo {
-        margin: 2rem 0;
-        source {
-            width: 50%;
-            height: 50%;
-        }
+        margin: 2rem 0 3rem;
+        max-width: 280px;
         img {
-            height: 50%;
-            width: 50%;
+            height: auto;
+            width: 100%;
         }
         @include m.tablet {
-            source {
-                width: 60%;
-                height: 60%;
-            }
-            img {
-                width: 60%;
-                height: 60%;
-            }
+            max-width: 340px;
         }
     }
 }
@@ -40,26 +31,20 @@
         margin-bottom: 2rem;
     }
     .first_class {
-        font-size: 1.8rem;
-        padding: 2rem 0;
+        font-size: 2rem;
+        padding: 1.5rem 0 0;
         text-align: center;
-        font-family: v.$thd-font;
-        background-image: repeating-linear-gradient(45deg,
-            #ffd900 0%,
-            #ffffff 50%
-        );
-        background-size: 200vw 200vw;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: loop 7s infinite linear;
-    
+        font-family: v.$second-font;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: v.$white;
         @include m.tablet {
-            font-size: 3rem;
+            font-size: 2.4rem;
         }
     }
 }
 .section_services {
-    height: 700px;
+    padding: 6rem 1.6rem 8rem;
     .services-index-title {
         margin: 9rem auto 5rem auto;
         padding: 2rem;
@@ -72,7 +57,8 @@
         }
     
         span {
-            color: v.$primary-c;
+            color: v.$black;
+            font-weight: bold;
         }
     }
     .services-index-btn {
@@ -251,6 +237,7 @@
             background: v.$white;
             box-shadow: 8px 8px 10px v.$black;
             transition: 0.5s;
+            color: v.$black;
         }
         &:nth-child(odd) .card_title{
             box-shadow: 8px 8px 10px v.$primary-c;
@@ -277,8 +264,8 @@
     }
     .final_info {
         width: 100%;
-        margin: 10rem auto 0 auto;
-        padding: 100px 0;
+        margin: 6rem auto 0 auto;
+        padding: 80px 1.6rem;
         display: flex;
         flex-direction: column;
         justify-content: center;

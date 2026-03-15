@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from 'react'
-import { Routes, Route, NavLink, BrowserRouter} from 'react-router-dom';
+import React, { lazy, Suspense, useMemo, useState } from 'react';
+import { Routes, Route, NavLink, BrowserRouter } from 'react-router-dom';
 import { BiMenu, BiX } from "react-icons/bi";
 
 const Index = lazy(()=> import('../components/Index'));
@@ -9,25 +9,36 @@ const Galery = lazy(()=> import('../components/Galery'));
 const Error = lazy(()=> import('../components/Error'));
 
 const RouterMain = () => {
-    let year = new Date().getFullYear();
-    const closeMenu = ()=> {
-        document.querySelector('#check').checked = false;
-    }
+    const year = useMemo(() => new Date().getFullYear(), []);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
     return (
         <BrowserRouter>
             <header className='header'>
-                <NavLink to="/index">
+                <NavLink to="/index" aria-label="Ir al inicio">
                     <picture className='logo'>
                         <source className='image_header' srcSet="/logo.webp"  type='image/webp' />
                         <img height={30} width={30} className='image_header' loading='lazy' src="/logo.jpg" alt="logotipo img" />
                     </picture>
                 </NavLink>
-                <input type='checkbox' id='check'/>
-                <label htmlFor='check' className='icons'>
-                    <BiMenu id='menu-icon'/>
-                    <BiX id='close-icon'/>
-                </label>
-                <nav className='nav'>
+                <button
+                    type="button"
+                    className="icons"
+                    aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+                    aria-expanded={isMenuOpen}
+                    onClick={toggleMenu}
+                >
+                    {isMenuOpen ? <BiX id='close-icon' /> : <BiMenu id='menu-icon' />}
+                </button>
+                <nav className={`nav ${isMenuOpen ? 'nav--open' : ''}`} aria-label="Navegación principal">
                     <NavLink
                         onClick={closeMenu}
                         to="/index"
