@@ -154,8 +154,6 @@ const Galery = () => {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [startPan, setStartPan] = useState({ x: 0, y: 0 });
 
-  const [loadedImages, setLoadedImages] = useState([]);
-
   const images = useMemo(() => galleryImages, []);
   const imagesFirstAid = useMemo(() => firstAidImages, []);
 
@@ -163,11 +161,6 @@ const Galery = () => {
   const secondColumnImages = useMemo(() => images.slice(46, 89), [images]);
   const thirdColumnImages = useMemo(() => images.slice(89, 135), [images]);
 
-  const handleImageLoad = (image) => {
-    setLoadedImages((prevImages) =>
-      prevImages.includes(image) ? prevImages : [...prevImages, image]
-    );
-  };
 
   const openImage = (image) => {
     setImageSelected(image);
@@ -184,7 +177,7 @@ const Galery = () => {
   };
 
   const handleOverlayClick = (event) => {
-    if (event.target.classList.contains("popup-img")) {
+    if (event.target.tagName !== "IMG" && event.target.tagName !== "BUTTON" && !event.target.closest('.popup-img__controls')) {
       closeImage();
     }
   };
@@ -281,7 +274,7 @@ const Galery = () => {
         </div>
       </section>
       <section className="first-aid" aria-labelledby="first-aid-title">
-        <h3 id="first-aid-title">Primeros auxilios</h3>
+        <h3 id="first-aid-title" className="gallery-section-title">Primeros auxilios</h3>
         <div className="first-aid__grid">
           {imagesFirstAid.map((image, index) => (
               <div
@@ -294,13 +287,12 @@ const Galery = () => {
                   data-src={image}
                   loading="lazy"
                   alt={`img ${index + 1}`}
-                  onLoad={() => handleImageLoad(image)}
                 />
               </div>
             ))}
         </div>
       </section>
-      <h3 className="images-title">Actividades</h3>
+      <h3 className="gallery-section-title">Actividades</h3>
       <section className="row" aria-label="Galería de actividades">
         <div className="column">
           {firstColumnImages.map((image, index) => (
@@ -314,8 +306,7 @@ const Galery = () => {
                 data-src={image}
                 loading="lazy"
                 alt={`img ${index + 1}`}
-                onLoad={() => handleImageLoad(image)}
-              />
+                />
             </div>
           ))}
         </div>
@@ -331,8 +322,7 @@ const Galery = () => {
                 data-src={image}
                 loading="lazy"
                 alt={`img ${index + 11}`}
-                onLoad={() => handleImageLoad(image)}
-              />
+                />
             </div>
           ))}
         </div>
@@ -348,8 +338,7 @@ const Galery = () => {
                 data-src={image}
                 loading="lazy"
                 alt={`img ${index + 21}`}
-                onLoad={() => handleImageLoad(image)}
-              />
+                />
             </div>
           ))}
         </div>

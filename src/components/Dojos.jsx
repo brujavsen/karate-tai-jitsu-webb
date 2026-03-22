@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
 
 const dojosData = [
   {
@@ -64,16 +63,6 @@ const dojosData = [
 ];
 
 const Dojos = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.state?.scrollToTop) {
-      window.scrollTo(0, 0);
-    }
-  }, [location.state]);
-
-  const dojos = useMemo(() => dojosData, []);
-
   return (
     <>
       <section className='hero_dojo' aria-labelledby="dojos-title">
@@ -82,35 +71,40 @@ const Dojos = () => {
           <p>Tu viaje comienza aquí</p>
         </div>
       </section>
-      <section className='dojos' aria-label="Listado de dojos">
-        {dojos.map((dojo) => (
-          <article key={dojo.id} className='dojo'>
-            <div className='dojo_info'>
-              <h3>{dojo.name}</h3>
-              <p>
-                {dojo.schedule}{' '}
-                {dojo.details.map((detail, index) => (
-                  <span key={index}>
-                    {index > 0 && ' | '}
-                    {detail}
-                  </span>
-                ))}
-              </p>
-              {dojo.mapUrl && (
-                <a
-                  href={dojo.mapUrl}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Ver mapa
-                </a>
-              )}
-            </div>
-          </article>
-        ))}
+      
+      <section className='dojos-container' aria-label="Listado de dojos">
+        <div className='dojos-grid'>
+          {dojosData.map((dojo) => (
+            <article key={dojo.id} className='dojo-card'>
+              <div className='dojo-info'>
+                <h3 className='dojo-name'>{dojo.name}</h3>
+                <p className='dojo-schedule'><strong>{dojo.schedule}</strong></p>
+                <ul className='dojo-details'>
+                  {dojo.details.map((detail, index) => (
+                    <li key={index}>{detail}</li>
+                  ))}
+                </ul>
+                <div className='dojo-action'>
+                    {dojo.mapUrl ? (
+                    <a
+                        href={dojo.mapUrl}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='btn-outline'
+                    >
+                        Ver mapa
+                    </a>
+                    ) : (
+                    <span className='no-map'>Sin mapa disponible</span>
+                    )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </>
   );
 };
 
-export default Dojos
+export default Dojos;

@@ -1,5 +1,5 @@
-import React, { lazy, Suspense, useMemo, useState } from 'react';
-import { Routes, Route, NavLink, BrowserRouter } from 'react-router-dom';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { Routes, Route, NavLink, BrowserRouter, useLocation } from 'react-router-dom';
 import { BiMenu, BiX } from "react-icons/bi";
 
 const Index = lazy(()=> import('../components/Index'));
@@ -8,8 +8,16 @@ const Services = lazy(()=> import('../components/Services'));
 const Galery = lazy(()=> import('../components/Galery'));
 const Error = lazy(()=> import('../components/Error'));
 
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+};
+
 const RouterMain = () => {
-    const year = useMemo(() => new Date().getFullYear(), []);
+    const year = new Date().getFullYear();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -22,11 +30,12 @@ const RouterMain = () => {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <header className='header'>
-                <NavLink to="/index" aria-label="Ir al inicio">
-                    <picture className='logo'>
-                        <source className='image_header' srcSet="/logo.webp"  type='image/webp' />
-                        <img height={30} width={30} className='image_header' loading='lazy' src="/logo.jpg" alt="logotipo img" />
+                <NavLink to="/" aria-label="Ir al inicio" onClick={closeMenu}>
+                    <picture className='logo-header'>
+                        <source className='image_header' srcSet="/logo.webp" type='image/webp' />
+                        <img height={45} width={45} className='image_header' src="/logo.jpg" alt="logotipo img" />
                     </picture>
                 </NavLink>
                 <button
@@ -41,7 +50,7 @@ const RouterMain = () => {
                 <nav className={`nav ${isMenuOpen ? 'nav--open' : ''}`} aria-label="Navegación principal">
                     <NavLink
                         onClick={closeMenu}
-                        to="/index"
+                        to="/"
                         className={({isActive}) => isActive ? "active" : ""}
                     >Inicio</NavLink>
                     <NavLink
@@ -61,46 +70,27 @@ const RouterMain = () => {
                     >Galeria</NavLink>
                 </nav>
             </header>
-            {/* Cargar componentes */}
-            {/* Aquí se carga el componente que coincide con el path */}
-            <Routes>
-                <Route path='/' element={
-                    <Suspense fallback={<h1>Cargando...</h1>}>
-                        <Index/>
-                    </Suspense>
-                }/>
-                <Route path='/index' element={
-                    <Suspense fallback={<h1>Cargando...</h1>}>
-                        <Index/>
-                    </Suspense>
-                }/>
-                <Route path='/dojos' element={
-                    <Suspense fallback={<h1>Cargando...</h1>}>
-                        <Dojos/>
-                    </Suspense>
-                }/>
-                <Route path='/services' element={
-                    <Suspense fallback={<h1>Cargando...</h1>}>
-                        <Services/>
-                    </Suspense>
-                }/>
-                <Route path='/galery' element={
-                    <Suspense fallback={<h1>Cargando...</h1>}>
-                        <Galery/>
-                    </Suspense>
-                }/>
-                <Route path='*' element={
-                    <Suspense fallback={<h1>Cargando...</h1>}>
-                        <Error/>
-                    </Suspense>
-                }/>
-            </Routes>
+            
+            <main className="main-content">
+                <Suspense fallback={<div className="loading-spinner">Cargando...</div>}>
+                    <Routes>
+                        <Route path='/' element={<Index/>} />
+                        <Route path='/index' element={<Index/>} />
+                        <Route path='/dojos' element={<Dojos/>} />
+                        <Route path='/services' element={<Services/>} />
+                        <Route path='/galery' element={<Galery/>} />
+                        <Route path='*' element={<Error/>} />
+                    </Routes>
+                </Suspense>
+            </main>
 
             <footer className='footer'>
-                <p>&copy; {year} Derechos Reservados a Gimnasio Gimbo</p>
+                <div className="footer-content">
+                    <p>&copy; {year} Derechos Reservados a Gimnasio Gimbo</p>
+                </div>
             </footer>
         </BrowserRouter>
-    )
-}
+    );
+};
 
-export default RouterMain
+export default RouterMain;
