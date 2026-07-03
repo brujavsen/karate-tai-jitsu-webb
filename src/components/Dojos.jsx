@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const dojosData = [
   {
@@ -65,6 +66,8 @@ const dojosData = [
 const Dojos = () => {
   return (
     <>
+            <Header></Header>
+
       <section className='hero_dojo' aria-labelledby="dojos-title">
         <div className='hero_title'>
           <h2 id="dojos-title">Dojos habilitados</h2>
