@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, NavLink, BrowserRouter, useLocation } from 'react-router-dom';
-import { BiMenu, BiX } from "react-icons/bi";
+
 import Header from '../components/Header';
 
 const Index = lazy(()=> import('../components/Index'));
@@ -24,6 +24,7 @@ const RouterMain = () => {
         <BrowserRouter>
             <ScrollToTop />
             
+            <Header />
             
             <main className="main-content">
                 <Suspense fallback={<div className="loading-spinner">Cargando...</div>}>
