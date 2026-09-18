@@ -1,0 +1,913 @@
+{
+  "galery": [
+    {
+      "src": "/galery/image-1.jpeg",
+      "sm": "/galery/image-1-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-2.jpeg",
+      "sm": "/galery/image-2-sm.webp",
+      "w": 600,
+      "h": 489
+    },
+    {
+      "src": "/galery/image-3.jpeg",
+      "sm": "/galery/image-3-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-4.jpeg",
+      "sm": "/galery/image-4-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-5.jpeg",
+      "sm": "/galery/image-5-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-6.jpeg",
+      "sm": "/galery/image-6-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-7.jpeg",
+      "sm": "/galery/image-7-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-8.jpeg",
+      "sm": "/galery/image-8-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-9.jpeg",
+      "sm": "/galery/image-9-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-10.jpeg",
+      "sm": "/galery/image-10-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-11.jpeg",
+      "sm": "/galery/image-11-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-12.jpeg",
+      "sm": "/galery/image-12-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-13.jpeg",
+      "sm": "/galery/image-13-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-14.jpeg",
+      "sm": "/galery/image-14-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-15.jpeg",
+      "sm": "/galery/image-15-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-16.jpeg",
+      "sm": "/galery/image-16-sm.webp",
+      "w": 600,
+      "h": 750
+    },
+    {
+      "src": "/galery/image-17.jpeg",
+      "sm": "/galery/image-17-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-18.jpeg",
+      "sm": "/galery/image-18-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-19.jpeg",
+      "sm": "/galery/image-19-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-20.jpeg",
+      "sm": "/galery/image-20-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-21.jpeg",
+      "sm": "/galery/image-21-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-22.jpeg",
+      "sm": "/galery/image-22-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-23.jpeg",
+      "sm": "/galery/image-23-sm.webp",
+      "w": 600,
+      "h": 557
+    },
+    {
+      "src": "/galery/image-24.jpeg",
+      "sm": "/galery/image-24-sm.webp",
+      "w": 600,
+      "h": 433
+    },
+    {
+      "src": "/galery/image-25.jpeg",
+      "sm": "/galery/image-25-sm.webp",
+      "w": 600,
+      "h": 269
+    },
+    {
+      "src": "/galery/image-26.jpeg",
+      "sm": "/galery/image-26-sm.webp",
+      "w": 600,
+      "h": 1333
+    },
+    {
+      "src": "/galery/image-27.jpeg",
+      "sm": "/galery/image-27-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-28.jpeg",
+      "sm": "/galery/image-28-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-29.jpeg",
+      "sm": "/galery/image-29-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-30.jpeg",
+      "sm": "/galery/image-30-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-31.jpeg",
+      "sm": "/galery/image-31-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-32.jpeg",
+      "sm": "/galery/image-32-sm.webp",
+      "w": 600,
+      "h": 277
+    },
+    {
+      "src": "/galery/image-33.jpeg",
+      "sm": "/galery/image-33-sm.webp",
+      "w": 600,
+      "h": 448
+    },
+    {
+      "src": "/galery/image-34.jpeg",
+      "sm": "/galery/image-34-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-35.jpg",
+      "sm": "/galery/image-35-sm.webp",
+      "w": 600,
+      "h": 456
+    },
+    {
+      "src": "/galery/image-36.jpg",
+      "sm": "/galery/image-36-sm.webp",
+      "w": 600,
+      "h": 798
+    },
+    {
+      "src": "/galery/image-37.jpg",
+      "sm": "/galery/image-37-sm.webp",
+      "w": 600,
+      "h": 1067
+    },
+    {
+      "src": "/galery/image-38.jpg",
+      "sm": "/galery/image-38-sm.webp",
+      "w": 600,
+      "h": 1067
+    },
+    {
+      "src": "/galery/image-39.jpg",
+      "sm": "/galery/image-39-sm.webp",
+      "w": 600,
+      "h": 389
+    },
+    {
+      "src": "/galery/image-40.jpg",
+      "sm": "/galery/image-40-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-41.jpg",
+      "sm": "/galery/image-41-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-42.jpg",
+      "sm": "/galery/image-42-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-43.jpg",
+      "sm": "/galery/image-43-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-44.jpg",
+      "sm": "/galery/image-44-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-45.jpg",
+      "sm": "/galery/image-45-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-46.jpg",
+      "sm": "/galery/image-46-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-47.jpg",
+      "sm": "/galery/image-47-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-48.jpg",
+      "sm": "/galery/image-48-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-49.jpg",
+      "sm": "/galery/image-49-sm.webp",
+      "w": 600,
+      "h": 329
+    },
+    {
+      "src": "/galery/image-50.jpg",
+      "sm": "/galery/image-50-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-51.jpg",
+      "sm": "/galery/image-51-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-52.jpg",
+      "sm": "/galery/image-52-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-53.jpg",
+      "sm": "/galery/image-53-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-54.jpg",
+      "sm": "/galery/image-54-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-55.jpg",
+      "sm": "/galery/image-55-sm.webp",
+      "w": 600,
+      "h": 787
+    },
+    {
+      "src": "/galery/image-56.jpg",
+      "sm": "/galery/image-56-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-57.jpg",
+      "sm": "/galery/image-57-sm.webp",
+      "w": 600,
+      "h": 744
+    },
+    {
+      "src": "/galery/image-58.jpg",
+      "sm": "/galery/image-58-sm.webp",
+      "w": 600,
+      "h": 774
+    },
+    {
+      "src": "/galery/image-59.jpg",
+      "sm": "/galery/image-59-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-60.jpg",
+      "sm": "/galery/image-60-sm.webp",
+      "w": 600,
+      "h": 798
+    },
+    {
+      "src": "/galery/image-61.jpg",
+      "sm": "/galery/image-61-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-62.jpg",
+      "sm": "/galery/image-62-sm.webp",
+      "w": 600,
+      "h": 796
+    },
+    {
+      "src": "/galery/image-63.jpg",
+      "sm": "/galery/image-63-sm.webp",
+      "w": 600,
+      "h": 893
+    },
+    {
+      "src": "/galery/image-64.jpg",
+      "sm": "/galery/image-64-sm.webp",
+      "w": 600,
+      "h": 498
+    },
+    {
+      "src": "/galery/image-65.jpg",
+      "sm": "/galery/image-65-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-66.jpg",
+      "sm": "/galery/image-66-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-67.jpg",
+      "sm": "/galery/image-67-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-68.jpg",
+      "sm": "/galery/image-68-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-69.jpg",
+      "sm": "/galery/image-69-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-70.jpg",
+      "sm": "/galery/image-70-sm.webp",
+      "w": 600,
+      "h": 750
+    },
+    {
+      "src": "/galery/image-71.jpg",
+      "sm": "/galery/image-71-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-72.jpg",
+      "sm": "/galery/image-72-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-73.jpg",
+      "sm": "/galery/image-73-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-74.jpg",
+      "sm": "/galery/image-74-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-75.jpg",
+      "sm": "/galery/image-75-sm.webp",
+      "w": 600,
+      "h": 658
+    },
+    {
+      "src": "/galery/image-76.jpg",
+      "sm": "/galery/image-76-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-77.jpg",
+      "sm": "/galery/image-77-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-78.jpg",
+      "sm": "/galery/image-78-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-79.jpg",
+      "sm": "/galery/image-79-sm.webp",
+      "w": 600,
+      "h": 1067
+    },
+    {
+      "src": "/galery/image-80.jpg",
+      "sm": "/galery/image-80-sm.webp",
+      "w": 600,
+      "h": 1067
+    },
+    {
+      "src": "/galery/image-81.jpg",
+      "sm": "/galery/image-81-sm.webp",
+      "w": 600,
+      "h": 1067
+    },
+    {
+      "src": "/galery/image-82.jpg",
+      "sm": "/galery/image-82-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-83.jpg",
+      "sm": "/galery/image-83-sm.webp",
+      "w": 600,
+      "h": 345
+    },
+    {
+      "src": "/galery/image-84.jpg",
+      "sm": "/galery/image-84-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-85.jpg",
+      "sm": "/galery/image-85-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-86.jpg",
+      "sm": "/galery/image-86-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-87.jpg",
+      "sm": "/galery/image-87-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-88.jpg",
+      "sm": "/galery/image-88-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-89.jpg",
+      "sm": "/galery/image-89-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-90.jpg",
+      "sm": "/galery/image-90-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-91.jpg",
+      "sm": "/galery/image-91-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-92.jpg",
+      "sm": "/galery/image-92-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-93.jpg",
+      "sm": "/galery/image-93-sm.webp",
+      "w": 600,
+      "h": 392
+    },
+    {
+      "src": "/galery/image-94.jpg",
+      "sm": "/galery/image-94-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-95.jpg",
+      "sm": "/galery/image-95-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-96.jpg",
+      "sm": "/galery/image-96-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-97.jpg",
+      "sm": "/galery/image-97-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-98.jpg",
+      "sm": "/galery/image-98-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-99.jpg",
+      "sm": "/galery/image-99-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-100.jpg",
+      "sm": "/galery/image-100-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-101.jpg",
+      "sm": "/galery/image-101-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-102.jpg",
+      "sm": "/galery/image-102-sm.webp",
+      "w": 600,
+      "h": 451
+    },
+    {
+      "src": "/galery/image-103.jpg",
+      "sm": "/galery/image-103-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-104.jpg",
+      "sm": "/galery/image-104-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-105.jpg",
+      "sm": "/galery/image-105-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-106.jpg",
+      "sm": "/galery/image-106-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-107.jpg",
+      "sm": "/galery/image-107-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-108.jpg",
+      "sm": "/galery/image-108-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-109.jpg",
+      "sm": "/galery/image-109-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-110.jpg",
+      "sm": "/galery/image-110-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-111.jpg",
+      "sm": "/galery/image-111-sm.webp",
+      "w": 600,
+      "h": 844
+    },
+    {
+      "src": "/galery/image-112.jpg",
+      "sm": "/galery/image-112-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-113.jpg",
+      "sm": "/galery/image-113-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-114.jpg",
+      "sm": "/galery/image-114-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-115.jpg",
+      "sm": "/galery/image-115-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-116.jpg",
+      "sm": "/galery/image-116-sm.webp",
+      "w": 600,
+      "h": 945
+    },
+    {
+      "src": "/galery/image-117.jpg",
+      "sm": "/galery/image-117-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-118.jpg",
+      "sm": "/galery/image-118-sm.webp",
+      "w": 600,
+      "h": 847
+    },
+    {
+      "src": "/galery/image-119.jpg",
+      "sm": "/galery/image-119-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-120.jpg",
+      "sm": "/galery/image-120-sm.webp",
+      "w": 600,
+      "h": 811
+    },
+    {
+      "src": "/galery/image-121.jpg",
+      "sm": "/galery/image-121-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-122.jpg",
+      "sm": "/galery/image-122-sm.webp",
+      "w": 600,
+      "h": 825
+    },
+    {
+      "src": "/galery/image-123.jpg",
+      "sm": "/galery/image-123-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-124.jpg",
+      "sm": "/galery/image-124-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-125.jpg",
+      "sm": "/galery/image-125-sm.webp",
+      "w": 600,
+      "h": 800
+    },
+    {
+      "src": "/galery/image-126.jpg",
+      "sm": "/galery/image-126-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-127.jpg",
+      "sm": "/galery/image-127-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-128.jpg",
+      "sm": "/galery/image-128-sm.webp",
+      "w": 600,
+      "h": 519
+    },
+    {
+      "src": "/galery/image-129.jpg",
+      "sm": "/galery/image-129-sm.webp",
+      "w": 600,
+      "h": 513
+    },
+    {
+      "src": "/galery/image-130.jpg",
+      "sm": "/galery/image-130-sm.webp",
+      "w": 600,
+      "h": 400
+    },
+    {
+      "src": "/galery/image-131.jpg",
+      "sm": "/galery/image-131-sm.webp",
+      "w": 600,
+      "h": 338
+    },
+    {
+      "src": "/galery/image-132.jpg",
+      "sm": "/galery/image-132-sm.webp",
+      "w": 600,
+      "h": 450
+    },
+    {
+      "src": "/galery/image-133.jpg",
+      "sm": "/galery/image-133-sm.webp",
+      "w": 600,
+      "h": 465
+    }
+  ],
+  "firstAid": [
+    {
+      "src": "/first-aid/image-02.jpg",
+      "sm": "/first-aid/image-02-sm.webp",
+      "w": 600,
+      "h": 744
+    },
+    {
+      "src": "/first-aid/image-03.jpg",
+      "sm": "/first-aid/image-03-sm.webp",
+      "w": 600,
+      "h": 744
+    },
+    {
+      "src": "/first-aid/image-04.jpg",
+      "sm": "/first-aid/image-04-sm.webp",
+      "w": 600,
+      "h": 950
+    },
+    {
+      "src": "/first-aid/image-05.jpg",
+      "sm": "/first-aid/image-05-sm.webp",
+      "w": 600,
+      "h": 744
+    },
+    {
+      "src": "/first-aid/image-06.jpg",
+      "sm": "/first-aid/image-06-sm.webp",
+      "w": 600,
+      "h": 743
+    }
+  ],
+  "root": [
+    {
+      "src": "/dojo-hero.jpg",
+      "sm": "/dojo-hero-sm.webp",
+      "lg": "/dojo-hero-lg.webp",
+      "w": 800,
+      "h": 600
+    },
+    {
+      "src": "/hero-service.jpeg",
+      "sm": "/hero-service-sm.webp",
+      "lg": "/hero-service-lg.webp",
+      "w": 800,
+      "h": 600
+    },
+    {
+      "src": "/service-1.jpeg",
+      "sm": "/service-1-sm.webp",
+      "lg": "/service-1-lg.webp",
+      "w": 800,
+      "h": 1105
+    },
+    {
+      "src": "/service-2.jpeg",
+      "sm": "/service-2-sm.webp",
+      "lg": "/service-2-lg.webp",
+      "w": 800,
+      "h": 910
+    },
+    {
+      "src": "/service-3.jpeg",
+      "sm": "/service-3-sm.webp",
+      "lg": "/service-3-lg.webp",
+      "w": 800,
+      "h": 554
+    },
+    {
+      "src": "/service-4.jpeg",
+      "sm": "/service-4-sm.webp",
+      "lg": "/service-4-lg.webp",
+      "w": 800,
+      "h": 574
+    },
+    {
+      "src": "/service-5.jpeg",
+      "sm": "/service-5-sm.webp",
+      "lg": "/service-5-lg.webp",
+      "w": 773,
+      "h": 1024
+    },
+    {
+      "src": "/service-6.jpeg",
+      "sm": "/service-6-sm.webp",
+      "lg": "/service-6-lg.webp",
+      "w": 800,
+      "h": 423
+    },
+    {
+      "src": "/service-8.jpeg",
+      "sm": "/service-8-sm.webp",
+      "lg": "/service-8-lg.webp",
+      "w": 800,
+      "h": 652
+    },
+    {
+      "src": "/service-10.jpeg",
+      "sm": "/service-10-sm.webp",
+      "lg": "/service-10-lg.webp",
+      "w": 800,
+      "h": 600
+    },
+    {
+      "src": "/service-11.jpg",
+      "sm": "/service-11-sm.webp",
+      "lg": "/service-11-lg.webp",
+      "w": 800,
+      "h": 533
+    }
+  ]
+}

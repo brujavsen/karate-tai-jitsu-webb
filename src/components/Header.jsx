@@ -18,7 +18,7 @@ const Header = () => {
                 <NavLink to="/" aria-label="Ir al inicio" onClick={closeMenu}>
                     <picture className='logo-header'>
                         <source className='image_header' srcSet="/logo.webp" type='image/webp' />
-                        <img height={45} width={45} className='image_header' src="/logo.jpg" alt="logotipo img" />
+                        <img height={45} width={45} className='image_header' src="/logo.png" alt="Escuela Karate Tai Jitsu" />
                     </picture>
                 </NavLink>
                 <button
@@ -26,11 +26,16 @@ const Header = () => {
                     className="icons"
                     aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
                     aria-expanded={isMenuOpen}
+                    aria-controls="main-nav"
                     onClick={toggleMenu}
                 >
                     {isMenuOpen ? <BiX id='close-icon' /> : <BiMenu id='menu-icon' />}
                 </button>
-                <nav className={`nav ${isMenuOpen ? 'nav--open' : ''}`} aria-label="Navegación principal">
+                <nav
+                    id="main-nav"
+                    className={`nav ${isMenuOpen ? 'nav--open' : ''}`}
+                    aria-label="Navegación principal"
+                >
                     <NavLink
                         onClick={closeMenu}
                         to="/"

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { Routes, Route, NavLink, BrowserRouter, useLocation } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
 
 import Header from '../components/Header';
 
@@ -12,7 +12,9 @@ const Error = lazy(()=> import('../components/Error'));
 const ScrollToTop = () => {
     const { pathname } = useLocation();
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // 'instant' evita que el scroll-behavior: smooth global anime el salto
+        // al principio en cada cambio de ruta.
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, [pathname]);
     return null;
 };

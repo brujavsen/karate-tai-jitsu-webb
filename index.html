@@ -1,30 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Escuela Karate Tai Jitsu Uruguay | Primera clase gratis</title>
     <meta
       name="description"
-      content="Sitio web de Escuela Karate Tai Jitsu | Te invitamos a tu primer clase gratis"
+      content="Escuela de Karate Tai Jitsu en Uruguay. Clases para niños, adolescentes y adultos en 8 dojos. Te invitamos a tu primera clase gratis."
     />
-    <title>Escuela Karate Tai Jitsu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://karate-tai-jitsu-web.vercel.app/" />
+
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#D94B56" />
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Escuela Karate Tai Jitsu Uruguay" />
+    <meta property="og:title" content="Escuela Karate Tai Jitsu Uruguay" />
+    <meta
+      property="og:description"
+      content="Clases de Karate Tai Jitsu para todas las edades en 8 dojos. Te invitamos a tu primera clase gratis."
+    />
+    <meta property="og:image" content="https://karate-tai-jitsu-web.vercel.app/service-1.jpeg" />
+    <meta property="og:locale" content="es_UY" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Escuela Karate Tai Jitsu Uruguay" />
+    <meta
+      name="twitter:description"
+      content="Clases de Karate Tai Jitsu para todas las edades en 8 dojos. Te invitamos a tu primera clase gratis."
+    />
+    <meta name="twitter:image" content="https://karate-tai-jitsu-web.vercel.app/service-1.jpeg" />
+
+    <!-- Fuentes: una sola peticion, solo los pesos que se usan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Oswald:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Imagen LCP del hero de portada. El atributo type hace que los
+         navegadores sin WebP se salten la descarga y usen el JPEG del CSS. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/service-1-lg.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
     <style>
       html {
         scroll-behavior: smooth;
       }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
     </style>
-    <!-- Retirar después de navidad -->
-    <!-- <script defer src="https://app.embed.im/snow.js"></script> -->
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Necesitas habilitar JavaScript para ver este sitio.</noscript>
     <script type="module" src="/src/main.jsx"></script>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
   </body>
 </html>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Header';
 
 const dojosData = [
   {
@@ -47,6 +46,7 @@ const dojosData = [
     name: 'Joaquín Suárez (Club de los abuelos)',
     schedule: 'Martes y Jueves',
     details: ['18:00 Hs'],
+    mapUrl: 'https://maps.app.goo.gl/TDjeUXCM2HQt1yqq8',
   },
   {
     id: 'toledo-chico',
@@ -61,20 +61,25 @@ const dojosData = [
     details: ['18:00 Hs', '19:00 Hs'],
     mapUrl: 'https://maps.app.goo.gl/Ksw3wDC8GGdck4RCA',
   },
+  {
+    id: 'aero-parque',
+    name: 'Dojo Aero Parque',
+    schedule: 'Lunes y Miércoles',
+    details: ['18:00 Hs', '19:00 Hs'],
+    mapUrl: 'https://maps.app.goo.gl/PdwsNLPeKjvHmRFF6',
+  },
 ];
 
 const Dojos = () => {
   return (
     <>
-            <Header></Header>
-
       <section className='hero_dojo' aria-labelledby="dojos-title">
         <div className='hero_title'>
           <h2 id="dojos-title">Dojos habilitados</h2>
           <p>Tu viaje comienza aquí</p>
         </div>
       </section>
-      
+
       <section className='dojos-container' aria-label="Listado de dojos">
         <div className='dojos-grid'>
           {dojosData.map((dojo) => (
@@ -88,18 +93,18 @@ const Dojos = () => {
                   ))}
                 </ul>
                 <div className='dojo-action'>
-                    {dojo.mapUrl ? (
+                  {dojo.mapUrl ? (
                     <a
-                        href={dojo.mapUrl}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='btn-outline'
+                      href={dojo.mapUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='btn-outline'
                     >
-                        Ver mapa
+                      Ver mapa
                     </a>
-                    ) : (
+                  ) : (
                     <span className='no-map'>Sin mapa disponible</span>
-                    )}
+                  )}
                 </div>
               </div>
             </article>

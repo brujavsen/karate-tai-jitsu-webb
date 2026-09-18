@@ -1,5 +1,9 @@
 import React from 'react';
 
+import images from '../data/images.json';
+
+const bySrc = Object.fromEntries(images.root.map((image) => [image.src, image]));
+
 const servicesData = [
   { url: "/service-8.jpeg", title: "Clases de Karate", desc: 'Sumérgete en el mundo del Karate Tai Jitsu. Nuestras clases te ofrecen la oportunidad de aprender las técnicas tradicionales, mejorar tu condición física y cultivar una mente fuerte.' },
   { url: "/service-1.jpeg", title: "Defensa Personal", desc: 'La seguridad personal es una prioridad. Aprende técnicas efectivas y gana confianza en ti mismo. Tu seguridad es nuestra misión.' },
@@ -10,7 +14,7 @@ const servicesData = [
   { url: "/service-3.jpeg", title: "Paseos", desc: 'Conecta con tu entorno y experimenta momentos de calma y reflexión en compañía de amigos y compañeros de dojo.' },
   { url: "/service-11.jpg", title: "Campamentos", desc: 'Forja amistades duraderas y mejora tus habilidades en un entorno inspirador durante nuestros campamentos.' },
   { url: "/service-10.jpeg", title: "Encuentros", desc: 'Participa en emocionantes encuentros y eventos especiales.' }
-];
+].map((service) => ({ ...service, ...bySrc[service.url] }));
 
 const Services = () => {
   return (
@@ -29,10 +33,20 @@ const Services = () => {
         </header>
         
         <section className='services-grid' aria-label="Servicios ofrecidos">
-          {servicesData.map((service, index) => (
-            <article key={index} className='service-card-modern'>
+          {servicesData.map((service) => (
+            <article key={service.url} className='service-card-modern'>
               <div className='service-image-wrapper'>
-                <img loading='lazy' width={400} height={300} src={service.url} alt={service.title} />
+                <picture>
+                  <source srcSet={service.sm} type='image/webp' />
+                  <img
+                    src={service.url}
+                    width={service.w}
+                    height={service.h}
+                    loading='lazy'
+                    decoding='async'
+                    alt={service.title}
+                  />
+                </picture>
               </div>
               <div className='service-content'>
                 <h3>{service.title}</h3>
