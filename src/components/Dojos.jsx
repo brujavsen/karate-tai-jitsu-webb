@@ -58,7 +58,7 @@ const dojosData = [
     id: 'los-aromos',
     name: 'Dojo Colonia Nicolich (Club Los Aromos Baby Futbol)',
     schedule: 'Martes y Jueves',
-    details: ['18:00 Hs', '19:00 Hs'],
+    details: ['18:00 Hs'],
     mapUrl: 'https://maps.app.goo.gl/Ksw3wDC8GGdck4RCA',
   },
   {
