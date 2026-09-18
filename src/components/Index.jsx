@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TbPlaneTilt, TbHandClick } from "react-icons/tb";
 import { MdOutlinePhotoCamera } from "react-icons/md";
@@ -29,6 +29,11 @@ const cardInfo = [
 ];
 
 const Index = () => {
+  // En tactil no hay :hover, asi que la tarjeta se abre y cierra tocandola.
+  const [openCard, setOpenCard] = useState(null);
+  const toggleCard = (index) =>
+    setOpenCard((current) => (current === index ? null : index));
+
   return (
     <>
       <section className='hero_index'>
@@ -80,12 +85,26 @@ const Index = () => {
         <h2 className='benefit-features-title'>¿Cómo podemos ayudarte?</h2>
         <div className='benefit_grid'>
           {cardInfo.map((info, infoIndex) => (
-            <article className='card' key={infoIndex}>
+            <article
+              className={`card ${openCard === infoIndex ? 'card--open' : ''}`}
+              key={infoIndex}
+              onClick={() => toggleCard(infoIndex)}
+            >
               <div className="card-icon">
                 <TbHandClick />
               </div>
-              <h3 className='card_title'>{info.qst}</h3>
-              <p className='card_cnt'>{info.rsp}</p>
+              <h3 className='card_title'>
+                {/* El boton da acceso por teclado; el clic sube hasta el article. */}
+                <button
+                  type='button'
+                  className='card_toggle'
+                  aria-expanded={openCard === infoIndex}
+                  aria-controls={`card-answer-${infoIndex}`}
+                >
+                  {info.qst}
+                </button>
+              </h3>
+              <p className='card_cnt' id={`card-answer-${infoIndex}`}>{info.rsp}</p>
             </article>
           ))}
         </div>

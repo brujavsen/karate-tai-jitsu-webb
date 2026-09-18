@@ -600,6 +600,26 @@ section section {
   }
 }
 
+@mixin card-open {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-top-color: var(--black);
+
+  .card-icon {
+    transform: scale(1.12) rotate(8deg);
+  }
+
+  h3 {
+    color: var(--primary);
+  }
+
+  p.card_cnt {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // HOME - BENEFICIOS
 // ---------------------------------------------------------------------------
@@ -672,17 +692,26 @@ section section {
         transition: color var(--dur) var(--ease);
       }
 
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+
+      .card_toggle {
+        all: unset;
+        cursor: pointer;
+        text-align: center;
+        text-transform: inherit;
+
+        &:focus-visible {
+          outline: 3px solid var(--primary);
+          outline-offset: 4px;
+          border-radius: var(--radius-sm);
+        }
+      }
+
+      // Cerrada por defecto en todos los dispositivos; se abre con hover
+      // (raton), con foco (teclado) o tocando la tarjeta (.card--open).
       p.card_cnt {
         color: var(--gray-dark);
-      }
-    }
-  }
-
-  // El texto se revela al pasar el raton SOLO donde hay raton. En tactil no
-  // existe :hover, asi que antes la respuesta era inalcanzable en movil.
-  @media (hover: hover) and (min-width: 769px) {
-    .benefit_grid .card {
-      p.card_cnt {
         max-height: 0;
         opacity: 0;
         margin-top: 0;
@@ -692,24 +721,14 @@ section section {
           margin-top var(--dur-slow) var(--ease);
       }
 
-      &:hover,
+      &.card--open,
       &:focus-within {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
-        border-top-color: var(--black);
+        @include card-open;
+      }
 
-        .card-icon {
-          transform: scale(1.12) rotate(8deg);
-        }
-
-        h3 {
-          color: var(--primary);
-        }
-
-        p.card_cnt {
-          max-height: 320px;
-          opacity: 1;
-          margin-top: 1rem;
+      @media (hover: hover) {
+        &:hover {
+          @include card-open;
         }
       }
     }

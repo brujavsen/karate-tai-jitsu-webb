@@ -65,7 +65,7 @@ const dojosData = [
     id: 'aero-parque',
     name: 'Dojo Aero Parque',
     schedule: 'Lunes y Miércoles',
-    details: ['18:00 Hs', '19:00 Hs'],
+    details: ['18:00 Hs'],
     mapUrl: 'https://maps.app.goo.gl/PdwsNLPeKjvHmRFF6',
   },
 ];
